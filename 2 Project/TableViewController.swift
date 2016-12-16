@@ -11,56 +11,56 @@ import UIKit
 
 class TableViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var memes: [Meme] {
-        return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
+        return (UIApplication.shared.delegate as! AppDelegate).memes
     }
     @IBOutlet weak var myTableView: UITableView!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         myTableView.reloadData()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return memes.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell")!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell")!
         let meme = memes[indexPath.row]
-        cell.textLabel?.text = "\(meme.topTextField) \(meme.bottomTextField)"
+        cell.textLabel?.text = "\(meme.topTextField!) \(meme.bottomTextField!)"
         cell.imageView?.image = meme.memedImage
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let detailVC = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailVC.meme = memes[indexPath.row]
         navigationController!.pushViewController(detailVC, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(self.addNew))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(self.addNew))
         
     }
     
     func addNew() {
-        let addVC = self.storyboard?.instantiateViewControllerWithIdentifier("addVC") as! MemeEditorViewController
-        self.presentViewController(addVC, animated: true, completion: nil)
+        let addVC = self.storyboard?.instantiateViewController(withIdentifier: "addVC") as! MemeEditorViewController
+        self.present(addVC, animated: true, completion: nil)
     
         
         
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            let object = UIApplication.sharedApplication().delegate
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let object = UIApplication.shared.delegate
             let appDelegate = object as! AppDelegate
-            appDelegate.memes.removeAtIndex(indexPath.row)
+            appDelegate.memes.remove(at: indexPath.row)
             myTableView.reloadData()
 
             
