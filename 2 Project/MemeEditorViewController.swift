@@ -18,6 +18,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var viewForMeme: UIView!
+    @IBOutlet weak var bottomTFConstrainX: NSLayoutConstraint!
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.black,
@@ -84,6 +86,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
             shareButton.isEnabled = true
+            bottomTFConstrainX.constant = 2.0
+            bottomTextField.updateConstraints()
         }
         dismiss(animated: true, completion: nil)
         
@@ -99,8 +103,34 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         toolBar.isHidden = true
         navigationBar.isHidden = true
         // Render view to an image
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.drawHierarchy(in: view.frame,afterScreenUpdates: true)
+        let widthOfImage:CGFloat!
+        let heightOfImage:CGFloat!
+        let frameForDrawing:CGRect!
+        let sizeForContext:CGSize!
+        if UIDevice.current.orientation == UIDeviceOrientation.landscapeLeft || UIDevice.current.orientation == UIDeviceOrientation.landscapeRight {
+            heightOfImage = imageView.frame.size.height
+            widthOfImage = heightOfImage*(imageView.image!.size.width/imageView.image!.size.height)
+            let x = -((imageView.frame.size.width - widthOfImage)/2)
+            let y =  imageView.frame.minY
+            frameForDrawing = CGRect(x: x, y: y, width: imageView.frame.size.width, height: heightOfImage)
+            sizeForContext = CGSize(width: widthOfImage, height: heightOfImage)
+
+            
+        } else {
+            widthOfImage = imageView.frame.size.width
+            heightOfImage = widthOfImage*(imageView.image!.size.height/imageView.image!.size.width)
+            let x = imageView.frame.minX
+            let y = -((imageView.frame.size.height - heightOfImage)/2)
+            frameForDrawing = CGRect(x: x, y: y, width: widthOfImage, height: imageView.frame.size.height)
+            sizeForContext = CGSize(width: widthOfImage, height: heightOfImage)
+
+        }
+        //frameForDrawing = CGRect(x: imageView.frame.minX, y: y, width: widthOfImage, height: imageView.frame.size.height)
+        print(sizeForContext)
+        print(frameForDrawing)
+        print(imageView.frame)
+        UIGraphicsBeginImageContext(sizeForContext)
+        viewForMeme.drawHierarchy(in: frameForDrawing,afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
