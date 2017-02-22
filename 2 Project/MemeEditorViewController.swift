@@ -9,7 +9,7 @@
 import UIKit
 
 class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-    
+    //MARK: - Outlets
     @IBOutlet weak var topTextFieldConstrain: NSLayoutConstraint!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var navigationBar: UINavigationBar!

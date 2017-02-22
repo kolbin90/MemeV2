@@ -107,12 +107,10 @@
 		0409BB641CCFF0E5001AD41B /* 2 Project */ = {
 			isa = PBXGroup;
 			children = (
+				04C6B6D71E5D163D007289F7 /* View */,
+				04C6B6D61E5D15AB007289F7 /* Controller */,
+				04C6B6D51E5D159A007289F7 /* Model */,
 				0409BB651CCFF0E5001AD41B /* AppDelegate.swift */,
-				049B24571CFCEE7B00741A6D /* TableViewController.swift */,
-				0409BB671CCFF0E5001AD41B /* MemeEditorViewController.swift */,
-				049B245A1CFE262200741A6D /* CollectionViewController.swift */,
-				049B245C1CFE28D600741A6D /* CollectionViewCell.swift */,
-				049B24151CEE5D1C00741A6D /* MemeStruct.swift */,
 				0409BB691CCFF0E5001AD41B /* Main.storyboard */,
 				0409BB6C1CCFF0E5001AD41B /* Assets.xcassets */,
 				0409BB6E1CCFF0E5001AD41B /* LaunchScreen.storyboard */,
@@ -138,6 +136,32 @@
 				0409BB871CCFF0E5001AD41B /* Info.plist */,
 			);
 			path = "2 ProjectUITests";
+			sourceTree = "<group>";
+		};
+		04C6B6D51E5D159A007289F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				049B24151CEE5D1C00741A6D /* MemeStruct.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		04C6B6D61E5D15AB007289F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				049B24571CFCEE7B00741A6D /* TableViewController.swift */,
+				0409BB671CCFF0E5001AD41B /* MemeEditorViewController.swift */,
+				049B245A1CFE262200741A6D /* CollectionViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		04C6B6D71E5D163D007289F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049B245C1CFE28D600741A6D /* CollectionViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
