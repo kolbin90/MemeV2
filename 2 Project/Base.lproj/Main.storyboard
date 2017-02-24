@@ -53,8 +53,47 @@
                                     </mask>
                                 </variation>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nP3-HS-MOp">
+                                <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="4VT-ko-mP9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="topTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nE3-Mn-Vzm">
+                                        <rect key="frame" x="8" y="71" width="359" height="17"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="AJk-s6-Lhw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="bottomTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2h-07-ivu" userLabel="Bottom Text Field">
+                                        <rect key="frame" x="8" y="443" width="359" height="17"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="kKB-fE-aBS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4VT-ko-mP9" firstAttribute="top" secondItem="nP3-HS-MOp" secondAttribute="top" id="6KS-9B-rvL"/>
+                                    <constraint firstItem="v2h-07-ivu" firstAttribute="leading" secondItem="nP3-HS-MOp" secondAttribute="leading" constant="8" id="Avw-QL-723"/>
+                                    <constraint firstItem="nE3-Mn-Vzm" firstAttribute="leading" secondItem="nP3-HS-MOp" secondAttribute="leading" constant="8" id="FSV-AZ-BuU"/>
+                                    <constraint firstAttribute="trailing" secondItem="4VT-ko-mP9" secondAttribute="trailing" id="Jes-Z3-c8m"/>
+                                    <constraint firstAttribute="bottom" secondItem="4VT-ko-mP9" secondAttribute="bottom" id="MBo-bH-h6N"/>
+                                    <constraint firstAttribute="trailing" secondItem="v2h-07-ivu" secondAttribute="trailing" constant="8" id="Sbt-xI-DkB"/>
+                                    <constraint firstAttribute="trailing" secondItem="nE3-Mn-Vzm" secondAttribute="trailing" constant="8" id="YRu-Np-Ps2"/>
+                                    <constraint firstAttribute="bottom" secondItem="v2h-07-ivu" secondAttribute="bottom" constant="119" id="hLF-dQ-IBQ"/>
+                                    <constraint firstItem="4VT-ko-mP9" firstAttribute="leading" secondItem="nP3-HS-MOp" secondAttribute="leading" id="xQh-JG-cBQ"/>
+                                    <constraint firstItem="nE3-Mn-Vzm" firstAttribute="top" secondItem="nP3-HS-MOp" secondAttribute="top" constant="71" id="zmB-xs-6oy"/>
+                                </constraints>
+                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="buttomTextField" translatesAutoresizingMaskIntoConstraints="NO" id="6RB-yS-seq">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="8Kc-am-0rR"/>
                                 </constraints>
@@ -74,39 +113,18 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="P97-ml-TGm"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4VT-ko-mP9">
-                                <rect key="frame" x="0.0" y="44" width="600" height="512"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="bottomTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2h-07-ivu" userLabel="Bottom Text Field">
-                                <rect key="frame" x="0.0" y="513" width="600" height="17"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="topTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nE3-Mn-Vzm">
-                                <rect key="frame" x="40" y="70" width="520" height="17"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="v2h-07-ivu" secondAttribute="trailing" constant="-20" id="32c-Pk-Hhw"/>
-                            <constraint firstItem="4VT-ko-mP9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="4mt-aK-pl2"/>
+                            <constraint firstItem="nP3-HS-MOp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1pa-34-VF6"/>
                             <constraint firstItem="1yB-NC-U60" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6Sf-jf-hJ1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6RB-yS-seq" secondAttribute="trailing" constant="-20" id="OFA-cI-vSG"/>
-                            <constraint firstItem="v2h-07-ivu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="OGh-7x-JsQ"/>
-                            <constraint firstItem="nE3-Mn-Vzm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="SU7-F1-fvS"/>
+                            <constraint firstAttribute="bottom" secondItem="nP3-HS-MOp" secondAttribute="bottom" constant="44" id="TBa-WU-ZTd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1yB-NC-U60" secondAttribute="trailing" constant="-20" id="UYD-Yu-F6r"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4VT-ko-mP9" secondAttribute="trailing" constant="-20" id="ZWb-qY-75z"/>
-                            <constraint firstItem="nE3-Mn-Vzm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="70" id="Zch-Lr-uWe"/>
-                            <constraint firstItem="4VT-ko-mP9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="44" id="eTy-Kg-czs"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="4VT-ko-mP9" secondAttribute="bottom" constant="44" id="gBS-tJ-H2p"/>
+                            <constraint firstItem="nP3-HS-MOp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="gmZ-si-tRO"/>
                             <constraint firstItem="6RB-yS-seq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="lRx-Vq-rRi"/>
+                            <constraint firstAttribute="trailing" secondItem="nP3-HS-MOp" secondAttribute="trailing" id="mII-Uq-RIf"/>
                             <constraint firstItem="1yB-NC-U60" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="r6K-Fm-8v2"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="v2h-07-ivu" secondAttribute="bottom" constant="70" id="sNR-8e-Oob"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nE3-Mn-Vzm" secondAttribute="trailing" constant="20" id="tvo-hh-83O"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6RB-yS-seq" secondAttribute="bottom" id="yXO-K8-YMb"/>
                         </constraints>
                     </view>
@@ -118,11 +136,12 @@
                         <outlet property="shareButton" destination="Tpo-sF-4Pd" id="laJ-IK-clh"/>
                         <outlet property="toolBar" destination="6RB-yS-seq" id="CqP-zj-WTA"/>
                         <outlet property="topTextField" destination="nE3-Mn-Vzm" id="g56-gK-w85"/>
+                        <outlet property="viewForMeme" destination="nP3-HS-MOp" id="Qr4-py-8tV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="346"/>
+            <point key="canvasLocation" x="965.60000000000002" y="345.87706146926541"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="3Ca-MM-dQ8">
@@ -144,7 +163,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EtJ-wa-KZT" id="4UZ-L5-znr">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
